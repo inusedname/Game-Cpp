@@ -1,121 +1,107 @@
-#include <iostream>
-#include <string>
-#include <cmath>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
-float const PI = 3.1456;
+#include "src/cloud.h"
+#include "src/branch.h"
+#include "src/hud.h"
+#include "src/bee.h"
 using namespace sf;
 
 int main()
 {
-    RenderWindow window(VideoMode(1920, 1080), "Timber Game");
-    Clock clk;
-    // Background
+    // =============================== LOADING TEXTURE & FONTs ================================= //
     Texture textureBg;
+    Texture textureTree;
+    Texture textureBee;
+    Texture textureCloud;
+    Texture textureBranch;
+    Font font;
     textureBg.loadFromFile("graphics/background.png");
+    textureTree.loadFromFile("graphics/tree.png");
+    textureBee.loadFromFile("graphics/bee.png");
+    textureCloud.loadFromFile("graphics/cloud.png");
+    textureBranch.loadFromFile("graphics/branch.png");
+    font.loadFromFile("fonts/KOMIKAP_.ttf");
+
+    // BASIC SETUP ====================================================================== //
+    RenderWindow window(VideoMode(1920, 1080), "Timber Game");
+    window.setFramerateLimit(60);
+    Clock clk;
+    int idle = 1;
+    int score = 0;
+    // ================================================================================== //
     Sprite background;
     background.setTexture(textureBg);
     background.setPosition(0, 0);
-    // Background was drawn
-
-    // Tree
-    Texture textureTree;
-    textureTree.loadFromFile("graphics/tree.png");
     Sprite tree;
     tree.setTexture(textureTree);
     tree.setPosition(810, 0);
-    // Tree was drawn
+    Bee bee(textureBee);
+    Clouds clouds(textureCloud, 1);
+    Branches branches(textureBranch, 6);
+    Hud HUD(font);
+    //=============================Time Remain============================
 
-    // Bee
-    Texture textureBee;
-    textureBee.loadFromFile("graphics/bee.png");
-    Sprite bee;
-    bee.setTexture(textureBee);
-    bee.setPosition(0, 800);
-    bool beeActive = 0;
-    float beeSpeed = 0.0f;
-    // Bee was drawn
+    Time gameTimeTotal;
+    float timeRemaining = 6.0f;
+    float drownSpeed = 400 / timeRemaining;
 
-    // Clouds
-    Texture textureCloud;
-    textureCloud.loadFromFile("graphics/cloud.png");
-    Sprite cloud1, cloud2, cloud3;
-
-    cloud1.setTexture(textureCloud);
-    cloud2.setTexture(textureCloud);
-    cloud3.setTexture(textureCloud);
-
-    cloud1.setPosition(0, 0);
-    cloud2.setPosition(0, 250);
-    cloud3.setPosition(0, 500);
-
-    bool cloud1Active = 0;
-    bool cloud2Active = 0;
-    bool cloud3Active = 0;
-
-    float cloud1Speed = 0.0;
-    float cloud2Speed = 0.0;
-    float cloud3Speed = 0.0;
-    //
-
+    //===========================================GAMELOOP==================================//
     while (window.isOpen())
     {
+        Time dt = clk.restart();
         Event event;
         while (window.pollEvent(event))
         {
             if (event.type == Event::Closed)
                 window.close();
         }
-
-        Time dt = clk.restart();
-        //==========================Bee Movement===========================//
-        if (beeActive == false)
+        if (Keyboard::isKeyPressed(Keyboard::Escape))
+            idle = 1;
+        if (Keyboard::isKeyPressed(Keyboard::Enter))
         {
-            // How fast is the bee
-            srand((int)time(0));
-            beeSpeed = (rand() % 200) + 200;
-
-            // How high is the bee
-            srand((int)time(0) * 10);
-            float height = (rand() % 500) + 500;
-            bee.setPosition(2000, height);
-            beeActive = true;
+            idle = 0;
+            if (timeRemaining <= 0.0f)
+            {
+                score = 0;
+                timeRemaining = 6.0f;
+            }
         }
-        else //Move the bee
+        if (idle == 1)
         {
-            bee.setPosition(bee.getPosition().x - (beeSpeed * dt.asSeconds()), bee.getPosition().y);
-            if (bee.getPosition().x < -100)
-                beeActive = false;
+            window.clear(Color::Black);
+            window.draw(HUD.welcomeText);
+            window.display();
+            continue;
         }
-        //=========================Clouds Movement===========================//
-        if (cloud1Active == false)
+        else if (idle == -1)
         {
-            // How fast is the cloud
-            srand((int)time(0) * 10);
-            cloud1Speed = (rand() % 200);
-
-            // How high is the cloud
-            srand((int)time(0) * 10);
-            float height = (rand() % 150);
-            cloud1.setPosition(-200, height);
-            cloud1Active = true;
+            window.clear(Color::Black);
+            HUD.gameOverText.setString("Time over\nScore = " + std::to_string(score));
+            window.draw(HUD.gameOverText);
+            window.display();
+            continue;
         }
-        else
+        bee.move(dt);
+        clouds.moveClouds(dt);
+        HUD.updateHUD(drownSpeed, timeRemaining, score);
+        // ==========================================Time Update==============================//
+        timeRemaining -= dt.asSeconds();
+        if (timeRemaining <= 0.0f)
         {
-            cloud1.setPosition(cloud1.getPosition().x + (cloud1Speed * dt.asSeconds()), cloud1.getPosition().y);
-            if (cloud1.getPosition().x > 1920)
-                cloud1Active = false;
+            idle = -1;
+            continue;
         }
-
-        //Render
+        // ============================================Render=================================//
         window.clear();
         window.draw(background);
+        for (int i = 0; i < clouds.clouds.size(); i++)
+            window.draw(clouds.clouds[i].spriteCloud);
+        for (int i = 0; i < branches.branches.size(); i++)
+            window.draw(branches.branches[i].spriteBranch);
         window.draw(tree);
-        window.draw(bee);
-        window.draw(cloud1);
-        window.draw(cloud2);
-        window.draw(cloud3);
+        window.draw(bee.beeSprite);
+        window.draw(HUD.scoreText);
+        window.draw(HUD.timeBar);
         window.display();
-        //End render
     }
 }
