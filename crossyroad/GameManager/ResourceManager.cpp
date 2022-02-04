@@ -5,7 +5,8 @@ ResourceManager::ResourceManager()
     m_Path = "Data/";
     m_TexturePath = m_Path + "Textures/";
     m_FontPath = m_Path + "Fonts/";
-    m_SoundPath = m_Path + "Audios/";
+    m_SoundPath = m_Path + "SFX/";
+    m_MusicPath = m_Path + "BGM/";
     m_allowSound = true;
     m_screenSize.x = 1280;
     m_screenSize.y = 720;
@@ -157,6 +158,43 @@ sf::Sound *ResourceManager::getSound(std::string name)
     m_MapSound.insert(std::pair<std::string, sf::Sound *>(name, sound));
     return sound;
 }
+void ResourceManager::addMusic(std::string name)
+{
+    sf::Music *music = new sf::Music();
+    music->openFromFile(m_SoundPath + name + ".wav");
+
+    auto it = m_MapFont.find(name);
+    if (it != m_MapFont.end())
+    {
+        return;
+    }
+    m_MapMusic.insert(std::pair<std::string, sf::Music *>(name, music));
+}
+
+void ResourceManager::removeMusic(std::string name)
+{
+    auto it = m_MapMusic.find(name);
+    if (it == m_MapMusic.end())
+    {
+        return;
+    }
+    if (it->second != nullptr)
+        delete it->second;
+    m_MapMusic.erase(it);
+}
+
+sf::Music *ResourceManager::getMusic(std::string name)
+{
+    auto it = m_MapMusic.find(name);
+    if (it != m_MapMusic.end())
+    {
+        return it->second;
+    }
+    sf::Music *music = new sf::Music();
+    music->openFromFile(m_SoundPath + name + ".wav");
+    m_MapMusic.insert(std::pair<std::string, sf::Music *>(name, music));
+    return music;
+}
 Vector2f ResourceManager::getScreenSize()
 {
     return m_screenSize;
@@ -166,7 +204,11 @@ void ResourceManager::playSound(std::string name)
     if (m_allowSound)
         DATA->getSound(name)->play();
 }
-
+void ResourceManager::playMusic(std::string name)
+{
+    if (m_allowSound)
+        DATA->getMusic(name)->play();
+}
 void ResourceManager::setAllowSound(bool allow)
 {
     m_allowSound = allow;

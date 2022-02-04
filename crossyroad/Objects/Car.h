@@ -5,10 +5,13 @@ class Car
 {
 private:
     Sprite carSprite;
+    Vector2f carSize;
     float carSpeed;
+    LANE_PROPERTY carProperty;
 
 public:
-    Car();
+    Car(std::string);
     ~Car();
-    void move(DIRECTION);
+    void refresh(std::string texture, LANE_PROPERTY);
+    void move(DIRECTION, float dt);
 };

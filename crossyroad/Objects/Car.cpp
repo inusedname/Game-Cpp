@@ -1,10 +1,23 @@
 #include "Car.h"
 
-void Car::Car()
+Car::Car(std::string name)
 {
-    for 
+    carSprite.setTexture(*DATA->getTexture(name));
+    carSize = Vector2f(carSprite.getLocalBounds().width, carSprite.getLocalBounds().height);
 }
-void Car::move(DIRECTION direction)
+Car::~Car()
 {
-
+}
+void Car::move(DIRECTION direction, float dt)
+{
+    if (direction == RIGHT)
+        carSprite.move(Vector2f(carSpeed, 0));
+    else
+        carSprite.move(Vector2f(-carSpeed, 0));
+}
+void Car::refresh(std::string texture, LANE_PROPERTY prop)
+{
+    carProperty = prop;
+    carSprite.setTexture(*DATA->getTexture(texture));
+    carSize = Vector2f(carSprite.getLocalBounds().width, carSprite.getLocalBounds().height);
 }

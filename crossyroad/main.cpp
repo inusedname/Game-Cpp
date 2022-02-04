@@ -1,11 +1,9 @@
+#pragma once
 #include "GameManager/ResourceManager.h"
-float const PI = 3.1456;
-using namespace sf;
 
 int main()
 {
-    srand(time(NULL));
-    RenderWindow window(VideoMode(DATA->getScreenSize().x, DATA->getScreenSize().y), "Crossy Craft");
+    RenderWindow window(VideoMode(1280, 720), "CrossyRoad");
     Clock clk;
     while (window.isOpen())
     {
@@ -15,6 +13,8 @@ int main()
         {
             if (event.type == Event::Closed)
                 window.close();
+            window.clear(Color::White);
+            window.display();
         }
     }
 }
