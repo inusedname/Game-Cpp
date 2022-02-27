@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\GameManager">
+      <UniqueIdentifier>{e703dce2-c2b1-498a-bdb9-1a0ef3248117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data">
+      <UniqueIdentifier>{e29cb0e6-4dc5-4bf6-95e9-f2da0762cad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data\Textures">
+      <UniqueIdentifier>{d72b719a-c718-4824-b088-fcb74dcfec11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data\SFX">
+      <UniqueIdentifier>{565abd3e-64f8-4f65-bf71-d29229af3b34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data\Fonts">
+      <UniqueIdentifier>{248108cb-effc-4ab3-9c13-4e861b907830}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data\BGM">
+      <UniqueIdentifier>{b9b20560-b033-4b73-ae80-b8c24f8fa1c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{86d6a633-c90b-43f2-9508-445cc564e2ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameManager\GameState">
+      <UniqueIdentifier>{8bd7dca8-e287-4c1d-9080-9105d2867ad0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="myGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\Game.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\ResourceManager.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Car.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Lane.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Map.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\Pool.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Player.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\Collision.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Leaf.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\GameState\About.cpp">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\GameState\Menu.cpp">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\GameState\Setting.cpp">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\GameState\StateBase.cpp">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\GameState\StateMachine.cpp">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\GameState\End.cpp">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\Button.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\MusicPlayer.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager\GameState\Play.cpp">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameManager\Game.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\ResourceManager.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\Singleton.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Car.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Lane.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Map.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\Pool.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Player.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\Collision.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Leaf.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameState\About.h">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameState\End.h">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameState\Menu.h">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameState\Setting.h">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameState\StateBase.h">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameState\StateMachine.h">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\Button.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\MusicPlayer.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameState\Play.h">
+      <Filter>Source Files\GameManager\GameState</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Data\Fonts\m5x7.ttf">
+      <Filter>Source Files\Data\Fonts</Filter>
+    </Font>
+    <Font Include="Data\Fonts\ThaleahFat.ttf">
+      <Filter>Source Files\Data\Fonts</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Data\Textures\car1.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car2.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car3.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car4.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car5.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car6.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car7.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car8.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car9.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\car10.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco1.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco2.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco3.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco4.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco5.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco6.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco7.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco8.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\deco9.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\grass0.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\grass1.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\grass2.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\lane0.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\lane1.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\lane2.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\road.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\roadlane.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\specialcar1.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\specialcar2.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\specialcar3.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\specialcar4.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\tile1.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\tile2.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\tile3.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\tile4.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\water.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+    <Image Include="Data\Textures\waterlane.png">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Textures\Kenney.url">
+      <Filter>Source Files\Data\Textures</Filter>
+    </None>
+    <None Include="Data\Textures\Patreon.url">
+      <Filter>Source Files\Data\Textures</Filter>
+    </None>
+    <None Include="Data\Textures\water.psd">
+      <Filter>Source Files\Data\Textures</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data\Textures\License.txt">
+      <Filter>Source Files\Data\Textures</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

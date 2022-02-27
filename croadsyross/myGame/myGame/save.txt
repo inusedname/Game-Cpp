@@ -1,0 +1,4 @@
+highestScore 18
+frameLimit 60
+musicVolume 40
+sfxVolume 40

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{856bd4b1-02a9-42e5-a220-ffca18c5a181}</ProjectGuid>
+    <RootNamespace>myGame</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\bin\sfml-studio-x86\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\bin\sfml-studio-x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\bin\sfml-studio-x86\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\bin\sfml-studio-x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\bin\sfml-studio-x64\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\bin\sfml-studio-x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\bin\sfml-studio-x64\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\bin\sfml-studio-x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="GameManager\Button.cpp" />
+    <ClCompile Include="GameManager\GameState\About.cpp" />
+    <ClCompile Include="GameManager\GameState\End.cpp" />
+    <ClCompile Include="GameManager\GameState\Menu.cpp" />
+    <ClCompile Include="GameManager\GameState\Play.cpp" />
+    <ClCompile Include="GameManager\GameState\Setting.cpp" />
+    <ClCompile Include="GameManager\GameState\StateBase.cpp" />
+    <ClCompile Include="GameManager\GameState\StateMachine.cpp" />
+    <ClCompile Include="GameManager\MusicPlayer.cpp" />
+    <ClCompile Include="GameManager\Pool.cpp" />
+    <ClCompile Include="GameManager\Collision.cpp" />
+    <ClCompile Include="GameManager\Game.cpp" />
+    <ClCompile Include="GameManager\ResourceManager.cpp" />
+    <ClCompile Include="myGame.cpp" />
+    <ClCompile Include="Objects\Car.cpp" />
+    <ClCompile Include="Objects\Lane.cpp" />
+    <ClCompile Include="Objects\Leaf.cpp" />
+    <ClCompile Include="Objects\Map.cpp" />
+    <ClCompile Include="Objects\Player.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameManager\Button.h" />
+    <ClInclude Include="GameManager\GameState\About.h" />
+    <ClInclude Include="GameManager\GameState\End.h" />
+    <ClInclude Include="GameManager\GameState\Menu.h" />
+    <ClInclude Include="GameManager\GameState\Play.h" />
+    <ClInclude Include="GameManager\GameState\Setting.h" />
+    <ClInclude Include="GameManager\GameState\StateBase.h" />
+    <ClInclude Include="GameManager\GameState\StateMachine.h" />
+    <ClInclude Include="GameManager\MusicPlayer.h" />
+    <ClInclude Include="GameManager\Pool.h" />
+    <ClInclude Include="GameManager\Collision.h" />
+    <ClInclude Include="GameManager\Game.h" />
+    <ClInclude Include="GameManager\ResourceManager.h" />
+    <ClInclude Include="GameManager\Singleton.h" />
+    <ClInclude Include="Objects\Car.h" />
+    <ClInclude Include="Objects\Lane.h" />
+    <ClInclude Include="Objects\Leaf.h" />
+    <ClInclude Include="Objects\Map.h" />
+    <ClInclude Include="Objects\Player.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Data\Fonts\m5x7.ttf" />
+    <Font Include="Data\Fonts\ThaleahFat.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Data\Textures\car1.png" />
+    <Image Include="Data\Textures\car10.png" />
+    <Image Include="Data\Textures\car2.png" />
+    <Image Include="Data\Textures\car3.png" />
+    <Image Include="Data\Textures\car4.png" />
+    <Image Include="Data\Textures\car5.png" />
+    <Image Include="Data\Textures\car6.png" />
+    <Image Include="Data\Textures\car7.png" />
+    <Image Include="Data\Textures\car8.png" />
+    <Image Include="Data\Textures\car9.png" />
+    <Image Include="Data\Textures\deco1.png" />
+    <Image Include="Data\Textures\deco2.png" />
+    <Image Include="Data\Textures\deco3.png" />
+    <Image Include="Data\Textures\deco4.png" />
+    <Image Include="Data\Textures\deco5.png" />
+    <Image Include="Data\Textures\deco6.png" />
+    <Image Include="Data\Textures\deco7.png" />
+    <Image Include="Data\Textures\deco8.png" />
+    <Image Include="Data\Textures\deco9.png" />
+    <Image Include="Data\Textures\grass0.png" />
+    <Image Include="Data\Textures\grass1.png" />
+    <Image Include="Data\Textures\grass2.png" />
+    <Image Include="Data\Textures\lane0.png" />
+    <Image Include="Data\Textures\lane1.png" />
+    <Image Include="Data\Textures\lane2.png" />
+    <Image Include="Data\Textures\road.png" />
+    <Image Include="Data\Textures\roadlane.png" />
+    <Image Include="Data\Textures\specialcar1.png" />
+    <Image Include="Data\Textures\specialcar2.png" />
+    <Image Include="Data\Textures\specialcar3.png" />
+    <Image Include="Data\Textures\specialcar4.png" />
+    <Image Include="Data\Textures\tile1.png" />
+    <Image Include="Data\Textures\tile2.png" />
+    <Image Include="Data\Textures\tile3.png" />
+    <Image Include="Data\Textures\tile4.png" />
+    <Image Include="Data\Textures\water.png" />
+    <Image Include="Data\Textures\waterlane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Textures\Kenney.url" />
+    <None Include="Data\Textures\Patreon.url" />
+    <None Include="Data\Textures\water.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data\Textures\License.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
